@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SMSInst</string>
+    <string name="title_activity_add_host">AddHost</string>
+    <string name="title_activity_device">Device</string>
+</resources>

@@ -31,8 +31,8 @@ public class Contacto {
         String[] device = new String[]{id};
         SQLiteDatabase base = db.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(db.CAMPO_ESTADO,"0");
-        base.update(db.TABLE_NAME,values,db.CAMPO_ID+"=?",device);
+        values.put(db.CAMPO_ESTADO_CONTACTO,"0");
+        base.update(db.TABLE_NAME_CONTACTO,values,db.CAMPO_ID_CONTACTO+"=?",device);
         return true;
     }
 
@@ -40,16 +40,16 @@ public class Contacto {
         db = new BDD(context);
         String[] device = new String[]{id};
         SQLiteDatabase base = db.getWritableDatabase();
-        base.delete(db.TABLE_NAME,db.CAMPO_ID+"=?",device);
+        base.delete(db.TABLE_NAME_CONTACTO,db.CAMPO_ID_CONTACTO+"=?",device);
         return true;
     }
 
     public Cursor mostrarConctactos(Context context){
         db = new BDD(context);
         SQLiteDatabase base = db.getReadableDatabase();
-        String[] campos = new String[] {BDD.CAMPO_NOMBRE,BDD.CAMPO_ID,BDD.CAMPO_CELULAR};
+        String[] campos = new String[] {BDD.CAMPO_NOMBRE_CONTACTO,BDD.CAMPO_ID_CONTACTO,BDD.CAMPO_CELULAR_CONTACTO};
         String[] filtro = new String[] {db.ESTADO_DISPONIBLE};
-        Cursor cursor = base.query(db.TABLE_NAME, campos, db.CAMPO_ESTADO+"=?",filtro, null, null, null);
+        Cursor cursor = base.query(db.TABLE_NAME_CONTACTO, campos, db.CAMPO_ESTADO_CONTACTO+"=?",filtro, null, null, null);
         return cursor;
 
     }
@@ -57,12 +57,12 @@ public class Contacto {
         db = new BDD(context);
         SQLiteDatabase base = db.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(db.CAMPO_ID,id);
-        values.put(db.CAMPO_CELULAR,celular);
-        values.put(db.CAMPO_NOMBRE,nombre);
-        values.put(db.CAMPO_ESTADO,1);
+        values.put(db.CAMPO_ID_CONTACTO,id);
+        values.put(db.CAMPO_CELULAR_CONTACTO,celular);
+        values.put(db.CAMPO_NOMBRE_CONTACTO,nombre);
+        values.put(db.CAMPO_ESTADO_CONTACTO,1);
 
-        long registro = base.insert(db.TABLE_NAME,db.CAMPO_NOMBRE,values);
+        long registro = base.insert(db.TABLE_NAME_CONTACTO,db.CAMPO_NOMBRE_CONTACTO,values);
 
         return registro;
     }

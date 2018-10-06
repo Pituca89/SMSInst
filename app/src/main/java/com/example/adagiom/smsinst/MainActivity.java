@@ -94,7 +94,10 @@ public class MainActivity extends AppCompatActivity {
                 msj.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        //Bundle bundle = new Bundle();
+                        //bundle.putString("codContacto",v.getTag().toString());
                         Intent intent = new Intent(MainActivity.this,Device.class);
+                        intent.putExtra("codContacto",v.getTag().toString());
                         startActivity(intent);
                     }
                 });

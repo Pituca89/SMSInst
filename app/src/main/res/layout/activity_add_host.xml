@@ -23,7 +23,7 @@
             android:layout_marginTop="0dp"
             android:layout_weight="1"
             android:background="@drawable/gradiente"
-            android:text="Add Host Account"
+            android:text="Agregar Nuevo Contacto"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="20dp"
@@ -61,8 +61,7 @@
                 android:id="@+id/nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/device"
+                android:layout_marginRight="@dimen/fab_margin"
                 android:layout_weight="10"
                 android:inputType="textPersonName" />
         </LinearLayout>
@@ -87,7 +86,7 @@
                 android:id="@+id/celular"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/fab_margin"
                 android:layout_weight="10"
                 android:inputType="phone" />
         </LinearLayout>
@@ -104,7 +103,7 @@
                 android:layout_alignBottom="@+id/device"
                 android:layout_marginVertical="10dp"
                 android:layout_weight="1"
-                android:text="D. Number"
+                android:text="ID Number"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -112,7 +111,7 @@
                 android:id="@+id/device"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
+                android:layout_marginRight="@dimen/fab_margin"
                 android:layout_weight="10"
                 android:inputType="number"
                 />

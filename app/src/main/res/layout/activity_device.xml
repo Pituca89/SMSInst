@@ -18,7 +18,7 @@
         android:layout_marginTop="0dp"
         android:layout_weight="1"
         android:background="@drawable/gradiente"
-        android:text="Device"
+        android:text="Panel de Opciones"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="20dp"
@@ -34,51 +34,57 @@
         android:layout_width="400dp"
         android:layout_height="340dp"
         android:layout_marginTop="100dp"
-        android:src="@mipmap/botonera_app" />
+        android:src="@mipmap/botonera_app_comp" />
+
     <Button
         android:id="@+id/btn_device_volver"
-        android:layout_width="300dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
         android:background="@drawable/boton"
-        android:text="Volver"
         android:onClick="volver"
-        android:textColor="#FFF"
-        />
+        android:text="Volver"
+        android:textColor="#FFF" />
 
     <ImageButton
         android:id="@+id/lock"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="110dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/btn_device_volver"
-        android:layout_marginTop="113dp"
-        android:src="@mipmap/lock" />
+        android:layout_marginTop="122dp"
+        android:background="@android:color/transparent"
+        android:src="@android:color/transparent" />
 
     <ImageButton
         android:id="@+id/unlock"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="102dp"
+        android:layout_height="106dp"
+        android:layout_alignBottom="@+id/lock"
         android:layout_alignEnd="@+id/btn_device_volver"
-        android:layout_alignTop="@+id/lock"
-        android:src="@mipmap/unlock" />
+        android:background="@android:color/transparent"
+        android:src="@android:color/transparent" />
 
     <ImageButton
         android:id="@+id/home"
-        android:layout_width="91dp"
-        android:layout_height="84dp"
+        android:layout_width="115dp"
+        android:layout_height="96dp"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/btn_device_volver"
-        android:layout_marginBottom="155dp"
-        android:src="@android:drawable/btn_dialog" />
+        android:layout_marginBottom="140dp"
+        android:background="@android:color/transparent"
+        android:src="@android:color/transparent" />
 
     <ImageButton
         android:id="@+id/sos"
-        android:layout_width="93dp"
-        android:layout_height="86dp"
+        android:layout_width="114dp"
+        android:layout_height="97dp"
         android:layout_alignBottom="@+id/home"
         android:layout_alignEnd="@+id/btn_device_volver"
-        android:src="@android:drawable/btn_dialog" />
+        android:background="@android:color/transparent"
+        android:src="@android:color/transparent" />
+
+
 </RelativeLayout>

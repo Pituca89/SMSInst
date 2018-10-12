@@ -67,5 +67,13 @@ public class Contacto {
         return registro;
     }
 
+    public Cursor mostrarNumero(String device,Context context){
 
+        db = new BDD(context);
+        SQLiteDatabase base = db.getReadableDatabase();
+        String[] campos = new String[] {db.CAMPO_CELULAR_CONTACTO};
+        String[] filtro = new String[] {device};
+        Cursor numero = base.query(db.TABLE_NAME_CONTACTO, campos, db.CAMPO_ID_CONTACTO+"=?",filtro, null, null, null);
+        return numero;
+    }
 }

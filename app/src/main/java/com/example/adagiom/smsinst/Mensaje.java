@@ -26,24 +26,26 @@ public class Mensaje {
         this.sms = SmsManager.getDefault();
     }
 
-    public void EnviarMensaje(Context context,Activity activity){
+    public String EnviarMensaje(Context context,Activity activity){
 
         try {
             int permissionCheck = ContextCompat.checkSelfPermission(context, Manifest.permission.SEND_SMS);
             if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(context,"No se tiene permiso para enviar SMS.",Toast.LENGTH_LONG).show();
+                //Toast.makeText(context,"No se tiene permiso para enviar SMS.",Toast.LENGTH_LONG).show();
                 ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.SEND_SMS}, 225);
+                return "No se tiene permiso para enviar SMS.";
             } else {
                 Log.i("Mensaje", "Se tiene permiso para enviar SMS!");
             }
             this.sms.sendTextMessage(this.receptor,null,this.mensaje,null,null);
-            Toast.makeText(context,"Mensaje Enviado",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context,"Mensaje Enviado",Toast.LENGTH_SHORT).show();
+            return "Mensaje Enviado";
         }catch (Exception e){
-            Toast.makeText(context,"Verifique los permisos",Toast.LENGTH_LONG).show();
+            //Toast.makeText(context,"Verifique los permisos",Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
 
-
+        return "Verifique los permisos";
     }
 
 

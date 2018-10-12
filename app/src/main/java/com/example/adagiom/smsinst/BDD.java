@@ -19,8 +19,8 @@ public class BDD extends SQLiteOpenHelper {
     public static final String CAMPO_NOMBRE_CONTACTO = "nombre";
     public static final String CAMPO_CELULAR_CONTACTO = "celular";
     public static final String CAMPO_ESTADO_CONTACTO = "estado";
-    public static final String TABLE_NAME_MENSAJE = "Mensaje";
 
+    public static final String TABLE_NAME_MENSAJE = "Mensaje";
     public static final String CAMPO_ID_MENSAJE = "id";
     public static final String CAMPO_NOMBRE_MENSAJE = "nombre";
     public static final String CAMPO_EMISOR_MENSAJE = "emisor";

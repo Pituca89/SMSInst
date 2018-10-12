@@ -24,7 +24,7 @@
             android:layout_marginTop="0dp"
             android:layout_weight="1"
             android:background="@drawable/gradiente"
-            android:text="Host Account"
+            android:text="Contactos Disponibles"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="20dp"
@@ -61,7 +61,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
         android:background="@drawable/boton"
-        android:text="Add host Account"
+        android:text="Agregar Nuevo Contacto"
         android:textColor="#FFF"
         android:onClick="irAddHost"
         />

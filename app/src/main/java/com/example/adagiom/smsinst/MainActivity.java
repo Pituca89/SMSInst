@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
+import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.support.v7.app.AlertDialog.*;
 import static android.view.View.TEXT_ALIGNMENT_CENTER;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     Agenda agenda;
     Bundle bundle;
     BDD db;
+    int contador = 0;
     @SuppressLint("InlinedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,9 +134,33 @@ public class MainActivity extends AppCompatActivity {
 
          Intent intent = new Intent(this,AddHost.class);
          startActivity(intent);
+    }
 
-     }
+    @Override
+    public void onBackPressed() {
 
+        if(contador == 0){
+            Toast.makeText(getApplicationContext(),"Presione nuevamente para salir",Toast.LENGTH_SHORT).show();
+            contador++;
+        }else{
+            //super.onBackPressed();
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
 
+        new CountDownTimer(3000,1000){
 
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                contador=0;
+            }
+        }.start();
+    }
 }
